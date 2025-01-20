@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:3000',  // Allow all origins, or replace with your specific React app URL
+    origin: '*',  // Allow all origins, or replace with your specific React app URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   }
@@ -15,7 +15,7 @@ const io = socketIo(server, {
 
 // Use CORS middleware for Express (to handle HTTP requests)
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow all origins or specify your React app's IP or URL
+  origin: '*', // Allow all origins or specify your React app's IP or URL
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
