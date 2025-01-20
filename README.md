@@ -48,8 +48,8 @@ The architecture of the app is simple yet effective, consisting of:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/secret-chat-app.git
-cd secret-chat-app
+git clone https://github.com/learneradarsh/WalkieTakie
+cd WalkieTakie
 ```
 
 ### 2. Install dependencies
