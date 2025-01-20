@@ -12,23 +12,6 @@ The **Secret Chat App** is built for **in-house conversations** where you don't 
 
 By avoiding third-party services or databases, the app ensures that your conversations remain completely local and safe from external surveillance or data mining.
 
-## 🏗️ Architecture
-
-The architecture of the app is simple yet effective, consisting of:
-
-### 1. **Frontend: React App**
-    - **Real-time messaging:** The frontend uses **React** for rendering the user interface and handling user interactions. It connects to the backend via **WebSocket** to send and receive messages in real-time.
-    - **Message display:** Messages are displayed in a chat window, and once received, they are shown for a limited time (5 minutes).
-    - **Temporary message storage:** Messages are stored in-memory and are automatically deleted after the specified time.
-
-### 2. **Backend: Node.js WebSocket Server**
-    - **WebSocket Communication:** The backend is powered by a **Node.js server** that uses **WebSocket** (via `socket.io`) for real-time communication. The server listens for incoming messages and broadcasts them to all connected clients.
-    - **In-memory message storage:** Messages are temporarily stored in the server's memory (not in a database). Each message is assigned a timestamp, and once delivered, it is set to be deleted after 5 minutes.
-    - **Local network communication:** The server is set up to run on your home Wi-Fi network, ensuring that it is accessible only within the local network for privacy and security.
-
-### 3. **Message Expiry Mechanism**
-    - Messages are destroyed from the server's memory after 5 minutes of being delivered to the recipient. This ensures that no message persists beyond its useful lifespan.
-
 ## 🛠️ Technology Stack
 
 - **Frontend:** React, WebSocket (`socket.io-client`)
